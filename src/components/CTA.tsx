@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import RequestDemoDialog from "./RequestDemoDialog";
 
 const CTA = () => {
+  const [demoDialogOpen, setDemoDialogOpen] = useState(false);
+
   return (
+    <>
+      <RequestDemoDialog open={demoDialogOpen} onOpenChange={setDemoDialogOpen} />
     <section className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-white/10" />
@@ -22,11 +28,21 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button size="lg" variant="hero" className="text-lg px-8 py-6 bg-background text-primary hover:bg-background/90 group shadow-hover hover:scale-105 transition-bounce">
+            <Button 
+              size="lg" 
+              variant="hero" 
+              className="text-lg px-8 py-6 bg-background text-primary hover:bg-background/90 group shadow-hover hover:scale-105 transition-bounce"
+              onClick={() => setDemoDialogOpen(true)}
+            >
               Start Free Risk Assessment
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm bg-primary-foreground/10 shadow-glow">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm bg-primary-foreground/10 shadow-glow"
+              onClick={() => setDemoDialogOpen(true)}
+            >
               <Phone className="mr-2" />
               Book 10-Min Call
             </Button>
@@ -39,6 +55,7 @@ const CTA = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

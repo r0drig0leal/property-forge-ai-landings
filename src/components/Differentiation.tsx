@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import RequestDemoDialog from "./RequestDemoDialog";
 
 const Differentiation = () => {
+  const [demoDialogOpen, setDemoDialogOpen] = useState(false);
+  
   const benefits = [
     "100+ data points from public records and government APIs",
     "Surface deal-breakers before they cost you five figures",
@@ -10,7 +14,9 @@ const Differentiation = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <>
+      <RequestDemoDialog open={demoDialogOpen} onOpenChange={setDemoDialogOpen} />
+      <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -44,7 +50,12 @@ const Differentiation = () => {
               </div>
 
               <div className="text-center pt-6">
-                <Button size="lg" variant="default" className="group shadow-elegant">
+                <Button 
+                  size="lg" 
+                  variant="default" 
+                  className="group shadow-elegant"
+                  onClick={() => setDemoDialogOpen(true)}
+                >
                   See What 1,000+ Properties Already Revealed
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -54,6 +65,7 @@ const Differentiation = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
