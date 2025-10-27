@@ -70,13 +70,18 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-accent': 'var(--gradient-accent)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'card': 'var(--shadow-card)',
+        'glow': 'var(--shadow-glow)',
+        'hover': 'var(--shadow-hover)',
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',
+        'bounce': 'var(--transition-bounce)',
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -10,9 +10,10 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Orlando skyline with property data visualization"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-[scale_20s_ease-in-out_infinite]"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,hsl(217_91%_60%/0.3)_100%)]" />
       </div>
 
       {/* Content */}
@@ -29,19 +30,20 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" variant="hero" className="text-lg px-8 py-6 group">
+          <Button size="lg" variant="hero" className="text-lg px-8 py-6 group shadow-hover">
             Start Free Risk Assessment
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+          <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm bg-primary-foreground/10">
             Request API Demo
           </Button>
         </div>
 
         {/* Urgency Badge */}
         <div className="mt-8 inline-block">
-          <div className="bg-warning text-warning-foreground px-6 py-2 rounded-full font-semibold text-sm animate-pulse">
-            Beta access limited to 100 users • Expanding soon
+          <div className="relative bg-warning text-warning-foreground px-6 py-3 rounded-full font-semibold text-sm shadow-glow">
+            <div className="absolute inset-0 bg-warning rounded-full animate-ping opacity-30" />
+            <span className="relative z-10">⚡ Beta access limited to 100 users • Expanding soon</span>
           </div>
         </div>
       </div>
