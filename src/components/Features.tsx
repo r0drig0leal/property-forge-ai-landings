@@ -1,5 +1,5 @@
 import FeatureCard from "./FeatureCard";
-import { DollarSign, AlertTriangle, Users, Cloud, TrendingUp } from "lucide-react";
+import { DollarSign, AlertTriangle, Users, Cloud, TrendingUp, FileText } from "lucide-react";
 
 const Features = () => {
   const features = [
@@ -32,6 +32,12 @@ const Features = () => {
       title: "ROI Potential Calculator",
       description: "Rent vs. cost modeling (repairs, eviction, taxes). Personalized yield vs. county averages.",
       iconColor: "text-success",
+    },
+    {
+      icon: FileText,
+      title: "Comprehensive Investment Report",
+      description: "Professional PDF reports with all metrics, charts, and recommendations. Export and share with partners or lenders.",
+      iconColor: "text-accent",
     },
   ];
 

@@ -38,27 +38,27 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 group shadow-hover bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all"
+            className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 group shadow-hover bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all w-full sm:w-auto"
             onClick={() => setDemoDialogOpen(true)}
           >
-            Start Free Risk Assessment
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <span className="whitespace-nowrap">Start Free Risk Assessment</span>
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm bg-primary-foreground/10"
+            className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm bg-primary-foreground/10 w-full sm:w-auto"
             onClick={() => setDemoDialogOpen(true)}
           >
-            Request API Demo
+            <span className="whitespace-nowrap">Request API Demo</span>
           </Button>
         </div>
 
         {/* Urgency Badge */}
-        <div className="mt-8 inline-block">
-          <div className="relative bg-warning text-warning-foreground px-12 py-3 rounded-full font-semibold text-sm shadow-glow">
+        <div className="mt-8 inline-block px-4 max-w-full">
+          <div className="relative bg-warning text-warning-foreground px-6 sm:px-12 py-3 rounded-full font-semibold text-xs sm:text-sm shadow-glow">
             <div className="absolute inset-0 bg-warning rounded-full animate-ping opacity-30" />
-            <span className="relative z-10">⚡ Beta access limited to 100 users • Expanding soon</span>
+            <span className="relative z-10 block text-center">⚡ Beta access limited to 100 users • Expanding soon</span>
           </div>
         </div>
       </div>
