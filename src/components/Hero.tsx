@@ -1,0 +1,52 @@
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/orlando-hero.jpg";
+import { ArrowRight } from "lucide-react";
+
+const Hero = () => {
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="Orlando skyline with property data visualization"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
+      </div>
+
+      {/* Content */}
+      <div className="container relative z-10 mx-auto px-4 py-20 text-center">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground leading-tight">
+          PropertyForge AI: Unlock Smarter Real Estate Decisions in Seconds
+        </h1>
+        <p className="text-xl md:text-2xl mb-4 text-primary-foreground/90 max-w-3xl mx-auto font-medium">
+          Imagine spotting a killer deal in Orlando—before the competition does.
+        </p>
+        <p className="text-lg md:text-xl mb-12 text-primary-foreground/80 max-w-4xl mx-auto leading-relaxed">
+          No more spreadsheets, endless Zillow scrolls, or gut-feel gambles. PropertyForge AI delivers instant, AI-powered insights on property risks, valuations, and ROI potential. Built for Florida's dynamic market, starting with Orange County.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button size="lg" variant="hero" className="text-lg px-8 py-6 group">
+            Start Free Risk Assessment
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            Request API Demo
+          </Button>
+        </div>
+
+        {/* Urgency Badge */}
+        <div className="mt-8 inline-block">
+          <div className="bg-warning text-warning-foreground px-6 py-2 rounded-full font-semibold text-sm animate-pulse">
+            Beta access limited to 100 users • Expanding soon
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
