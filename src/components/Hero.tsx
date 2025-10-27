@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 group shadow-hover bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all w-full sm:w-auto"
+            className="text-lg px-8 py-6 group shadow-hover bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all w-full sm:w-auto"
             onClick={() => setDemoDialogOpen(true)}
           >
             <span className="whitespace-nowrap">Start Free Risk Assessment</span>
@@ -47,7 +47,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm bg-primary-foreground/10 w-full sm:w-auto"
+            className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm bg-primary-foreground/10 w-full sm:w-auto"
             onClick={() => setDemoDialogOpen(true)}
           >
             <span className="whitespace-nowrap">Request API Demo</span>
