@@ -15,8 +15,8 @@ const FeatureCard = ({ icon: Icon, title, description, iconColor = "text-primary
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-smooth" />
       
       {/* Icon container with background */}
-      <div className="relative mb-6">
-        <div className="inline-flex p-4 rounded-2xl bg-background/80 backdrop-blur-sm border-2 border-border shadow-card group-hover:shadow-glow group-hover:scale-110 transition-bounce">
+      <div className="relative mb-6 flex justify-center">
+        <div className="inline-flex p-4 rounded-2xl bg-background/80 backdrop-blur-sm shadow-card group-hover:shadow-glow group-hover:scale-110 transition-bounce">
           <Icon className={iconColor} size={32} strokeWidth={2} />
         </div>
       </div>
