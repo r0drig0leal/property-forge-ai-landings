@@ -18,7 +18,7 @@ const Hero = () => {
           alt="Orlando skyline with property data visualization"
           className="w-full h-full object-cover scale-105 animate-[scale_20s_ease-in-out_infinite]"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
+        <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,hsl(217_91%_60%/0.3)_100%)]" />
       </div>
 
