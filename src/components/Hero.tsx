@@ -38,8 +38,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            variant="hero" 
-            className="text-lg px-8 py-6 group shadow-hover"
+            className="text-lg px-8 py-6 group shadow-hover bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all"
             onClick={() => setDemoDialogOpen(true)}
           >
             Start Free Risk Assessment
@@ -48,7 +47,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm bg-primary-foreground/10"
+            className="text-lg px-8 py-6 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm bg-primary-foreground/10"
             onClick={() => setDemoDialogOpen(true)}
           >
             Request API Demo
