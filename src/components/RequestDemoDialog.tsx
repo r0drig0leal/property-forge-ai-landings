@@ -27,32 +27,32 @@ const demoRequestSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(2, { message: "Nome deve ter pelo menos 2 caracteres" })
-    .max(100, { message: "Nome deve ter no máximo 100 caracteres" }),
+    .min(2, { message: "Name must be at least 2 characters" })
+    .max(100, { message: "Name must be less than 100 characters" }),
   email: z
     .string()
     .trim()
-    .email({ message: "Email inválido" })
-    .max(255, { message: "Email deve ter no máximo 255 caracteres" }),
+    .email({ message: "Invalid email address" })
+    .max(255, { message: "Email must be less than 255 characters" }),
   company: z
     .string()
     .trim()
-    .min(2, { message: "Empresa deve ter pelo menos 2 caracteres" })
-    .max(100, { message: "Empresa deve ter no máximo 100 caracteres" }),
+    .min(2, { message: "Company must be at least 2 characters" })
+    .max(100, { message: "Company must be less than 100 characters" }),
   phone: z
     .string()
     .trim()
-    .min(10, { message: "Telefone deve ter pelo menos 10 caracteres" })
-    .max(20, { message: "Telefone deve ter no máximo 20 caracteres" })
-    .regex(/^[0-9+\-\s()]+$/, { message: "Formato de telefone inválido" }),
+    .min(10, { message: "Phone must be at least 10 characters" })
+    .max(20, { message: "Phone must be less than 20 characters" })
+    .regex(/^[0-9+\-\s()]+$/, { message: "Invalid phone format" }),
   investmentType: z
     .string()
     .trim()
-    .min(1, { message: "Selecione um tipo de investimento" }),
+    .min(1, { message: "Please select an investment type" }),
   message: z
     .string()
     .trim()
-    .max(1000, { message: "Mensagem deve ter no máximo 1000 caracteres" })
+    .max(1000, { message: "Message must be less than 1000 characters" })
     .optional(),
 });
 
@@ -87,16 +87,16 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
       // Simular envio (aqui você conectaria com backend/email service)
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Criar mensagem formatada para WhatsApp
-      const whatsappMessage = `*Nova Solicitação de Demo API - PropertyForge*%0A%0A*Nome:* ${encodeURIComponent(data.name)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Empresa:* ${encodeURIComponent(data.company)}%0A*Telefone:* ${encodeURIComponent(data.phone)}%0A*Tipo:* ${encodeURIComponent(data.investmentType)}%0A${data.message ? `*Mensagem:* ${encodeURIComponent(data.message)}` : ''}`;
+      // Create formatted WhatsApp message
+      const whatsappMessage = `*New API Demo Request - PropertyForge*%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Company:* ${encodeURIComponent(data.company)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Type:* ${encodeURIComponent(data.investmentType)}%0A${data.message ? `*Message:* ${encodeURIComponent(data.message)}` : ''}`;
       
-      // Abrir WhatsApp (substitua pelo número real)
+      // Open WhatsApp (replace with real number)
       window.open(`https://wa.me/5511999999999?text=${whatsappMessage}`, '_blank');
       
       setIsSuccess(true);
       toast({
-        title: "Solicitação enviada!",
-        description: "Entraremos em contato em até 24 horas.",
+        title: "Request sent!",
+        description: "We'll contact you within 24 hours.",
       });
       
       // Reset form após 2 segundos
@@ -108,8 +108,8 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
       
     } catch (error) {
       toast({
-        title: "Erro ao enviar",
-        description: "Tente novamente ou entre em contato diretamente.",
+        title: "Error sending request",
+        description: "Please try again or contact us directly.",
         variant: "destructive",
       });
     } finally {
