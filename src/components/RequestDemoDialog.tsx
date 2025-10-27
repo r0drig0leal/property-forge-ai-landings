@@ -84,14 +84,18 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
     setIsSubmitting(true);
     
     try {
-      // Simular envio (aqui você conectaria com backend/email service)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Create formatted WhatsApp message
-      const whatsappMessage = `*New API Demo Request - PropertyForge*%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Company:* ${encodeURIComponent(data.company)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Type:* ${encodeURIComponent(data.investmentType)}%0A${data.message ? `*Message:* ${encodeURIComponent(data.message)}` : ''}`;
-      
-      // Open WhatsApp (replace with real number)
-      window.open(`https://wa.me/5511999999999?text=${whatsappMessage}`, '_blank');
+      // Send data to n8n webhook
+      const response = await fetch('https://porpertyforgeai.app.n8n.cloud/webhook/submission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send request');
+      }
       
       setIsSuccess(true);
       toast({
@@ -99,7 +103,7 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
         description: "We'll contact you within 24 hours.",
       });
       
-      // Reset form após 2 segundos
+      // Reset form after 2 seconds
       setTimeout(() => {
         form.reset();
         setIsSuccess(false);
@@ -107,6 +111,7 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
       }, 2000);
       
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Error sending request",
         description: "Please try again or contact us directly.",
