@@ -56,7 +56,7 @@ const Hero = () => {
 
         {/* Urgency Badge */}
         <div className="mt-8 inline-block">
-          <div className="relative bg-warning text-warning-foreground px-6 py-3 rounded-full font-semibold text-sm shadow-glow">
+          <div className="relative bg-warning text-warning-foreground px-12 py-3 rounded-full font-semibold text-sm shadow-glow">
             <div className="absolute inset-0 bg-warning rounded-full animate-ping opacity-30" />
             <span className="relative z-10">⚡ Beta access limited to 100 users • Expanding soon</span>
           </div>
