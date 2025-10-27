@@ -85,7 +85,7 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
     
     try {
       // Send data to n8n webhook
-      const response = await fetch('https://porpertyforgeai.app.n8n.cloud/webhook/submission', {
+      const response = await fetch('https://porpertyforgeai.app.n8n.cloud/webhook-test/submission', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
