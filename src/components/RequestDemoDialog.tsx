@@ -84,8 +84,7 @@ const RequestDemoDialog = ({ open, onOpenChange }: RequestDemoDialogProps) => {
     setIsSubmitting(true);
     
     try {
-      // Send data to n8n webhook
-      const response = await fetch('https://porpertyforgeai.app.n8n.cloud/webhook-test/submission', {
+      const response = await fetch('https://propertyforgeai.com/receive_lead', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
